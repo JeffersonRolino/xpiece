@@ -5,10 +5,12 @@ from .models import Category, Format, Product, Screenshot
 
 class FormatInline(admin.StackedInline):
     model = Format
+    extra = 1
 
 
 class ScreenshotInline(admin.StackedInline):
     model = Screenshot
+    extra = 1
 
 
 @admin.register(Category)
@@ -19,9 +21,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', 'slug', 'price', 'created', 'updated']
+    list_display = ['name', 'slug', 'price', 'created', 'updated', 'published']
     list_filter = ['created', 'updated']
-    list_editable = ['price']
+    list_editable = ['price', 'published']
     prepopulated_fields = {'slug': ('name',)}
     inlines = [
         FormatInline,
