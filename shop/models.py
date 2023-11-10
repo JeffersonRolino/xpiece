@@ -44,3 +44,17 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Format(models.Model):
+    name = models.CharField(max_length=200)
+    product = models.ForeignKey(Product, related_name='formats', on_delete=models.CASCADE)
+    icon = models.FileField(upload_to='formats/%Y/%m/%d', blank=True)
+
+
+class Screenshot(models.Model):
+    product = models.ForeignKey(Product, default=None, related_name='screnshots', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
+
+    def __str__(self):
+        return self.product.name

@@ -1,6 +1,14 @@
 from django.contrib import admin
 
-from .models import Category, Product
+from .models import Category, Format, Product, Screenshot
+
+
+class FormatInline(admin.StackedInline):
+    model = Format
+
+
+class ScreenshotInline(admin.StackedInline):
+    model = Screenshot
 
 
 @admin.register(Category)
@@ -15,3 +23,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = ['created', 'updated']
     list_editable = ['price']
     prepopulated_fields = {'slug': ('name',)}
+    inlines = [
+        FormatInline,
+        ScreenshotInline,
+    ]
