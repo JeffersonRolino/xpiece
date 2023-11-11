@@ -114,6 +114,7 @@ p {
     grid-template-columns: repeat(12, 1fr);
     max-width: 1440px;
     margin: 0 auto;
+    gap: 30px;
 }
 
 .content {
@@ -121,20 +122,14 @@ p {
 }
 
 
-
 /*************************************************************************
   Header
 **************************************************************************/
 
 header {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    max-width: 1440px;
-    margin: 0 auto;
     min-height: 64px;
     padding: 24px 0px;
     align-items: center;
-    column-gap: 30px;
 }
 
 #logo {
@@ -186,14 +181,6 @@ header {
 footer {
     background: var(--color-dark);
     width: 100%;
-    /* min-height: 420px; */
-}
-
-footer .container {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    max-width: 1440px;
-    margin: 0 auto;
     padding-top: 64px;
 }
 
@@ -303,7 +290,7 @@ footer .container {
     padding-bottom: 64px;
 }
 
-.hero h2, .hero h5 {
+.value-proposition {
     grid-column: 4 / span 6;
     text-align: center;
 }
@@ -325,7 +312,6 @@ footer .container {
 /* Product List */
 .product-list {
     padding-top: 64px;
-    gap: 30px;
 }
 
 .product-card {
