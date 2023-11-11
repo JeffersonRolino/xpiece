@@ -1,2 +1,28 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block content %}
+    <main class="product-list">
+        {% for product in products %}
+            <div class="product-card">
+                <div class="thumbnail">
+                    <a href="{{ product.get_absolute_url }}">
+                        <img src="{% if product.image %}{{product.image.url }} {% else %}{% static "images/default_image.png" %} {% endif %}" alt="">
+                    </a>
+                </div>
+                
+                <div class="label">
+                    <div class="category-price-text">
+                        <p>{% if product.category %}{{ product.category.name }}{% endif %}</p>
+                        <div class="price">
+                            <span>$</span><h6>{{ product.price }}</h6>
+                        </div>
+                    </div>
+                    <a href="{{ product.get_absolute_url }}">
+                        <h5>{{ product.name }}</h5>
+                    </a>                 
+                </div>                
+            </div>
+        {% endfor %}
+    </main>
+{% endblock content %}

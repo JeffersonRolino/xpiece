@@ -50,7 +50,9 @@ class Product(models.Model):
 class Format(models.Model):
     name = models.CharField(max_length=200)
     product = models.ForeignKey(Product, related_name='formats', on_delete=models.CASCADE)
-    icon = models.FileField(upload_to='formats/%Y/%m/%d', blank=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Screenshot(models.Model):
