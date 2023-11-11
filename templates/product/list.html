@@ -2,7 +2,12 @@
 {% load static %}
 
 {% block content %}
-    <main class="product-list">
+    <section class="hero grid-container">
+        <h2>Improve your development workflow.</h2>
+        <h5>Perhaps your dream design already exists!</h5>
+    </section>
+
+    <main class="product-list grid-container">
         {% for product in products %}
             <div class="product-card">
                 <div class="thumbnail">
@@ -19,7 +24,7 @@
                         </div>
                     </div>
                     <a href="{{ product.get_absolute_url }}">
-                        <h5>{{ product.name }}</h5>
+                        <h6>{{ product.name }}</h6>
                     </a>                 
                 </div>                
             </div>
