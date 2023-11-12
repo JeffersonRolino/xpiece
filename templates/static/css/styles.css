@@ -112,13 +112,14 @@ p {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    max-width: 1440px;
+    max-width: 1410px;
     margin: 0 auto;
     gap: 30px;
 }
 
 .content {
     margin: 64px auto;
+    height: 100%;
 }
 
 
@@ -372,16 +373,17 @@ footer {
 }
 
 .thumbnail {
-    height: 280px;
+    height: 330px;
     background: var(--color-light-gray);
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    object-fit: contain;
 }
 
 .thumbnail img {
-    width: 100%;
+    height: 100%;
 }
 
 .label {
@@ -421,3 +423,102 @@ footer {
     padding: 0;
 }
 
+
+/*************************************************************************
+  Product Detail
+**************************************************************************/
+
+.product-content {
+    height: 100%;
+    /* grid-template-rows: auto minmax(480px, 690px); */
+}
+
+.product-content img {
+    grid-column: span 8;
+    width: 100%;
+    max-width: 930px;
+}
+
+.product-detail {
+    grid-column: 9 / span 4;
+    top: 30px;
+    padding: 32px;
+    border: 3px solid var(--color-light-gray);
+    border-radius: 32px;
+    height: 100%;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-detail h1 {
+    font-size: var(--font-size-h4);
+    line-height: 1.2;
+}
+
+.product-detail .category-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-price h2 {
+    font-size: var(--font-size-p);
+    text-transform: uppercase;
+}
+
+.category-price a {
+    text-decoration: none;
+    color: var(--color-gray);
+    text-transform: uppercase;
+}
+
+.category-price h6 {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-dark);
+}
+
+.product-detail p {
+    line-height: var(--font-line-height);
+    /* text-align: justify; */
+}
+
+.product-detail--labels{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.product-detail--label .label-title{
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
+    color: var(--color-dark);
+    font-weight: var(--font-weight-semi-bold);
+    line-height: 0;
+}
+
+.product-detail--label p {
+    line-height: 0; 
+}
+
+.add-cart--button {
+    min-width: 80px;
+    padding: 16px 32px;
+    margin: 0 8px;
+    text-align: center;
+    border: none;
+    border-radius: 32px;
+    text-decoration: none;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: var(--font-size-p);
+    font-weight: var(--font-weight-semi-bold);
+    align-self: center;
+    margin-top: auto;
+}
+
+.add-cart--button:hover {
+    background-color: var(--color-dark);
+}

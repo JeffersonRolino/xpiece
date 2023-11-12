@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ product.name }}{% endblock title %}
+
+{% block content %}
+    <main class="product-content grid-container">
+        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/default_cover.png' %}{% endif %}" alt="Product Cover Image" class="cover">
+        <div class="product-detail">
+            <div class="category-price">
+                <h2>
+                    <a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
+                </h2>
+                <h6>${{product.price}}</h6>
+            </div>
+            <h1>{{ product.name }}</h1>
+            {{product.description|linebreaks}}
+
+            <hr>
+
+            <div class="product-detail--labels">
+                <div class="product-detail--label">
+                    <p class="label-title">Formats</p>
+                    <p>png, svg, eps</p>
+                </div>
+    
+                <div class="product-detail--label">
+                    <p class="label-title">Total Size</p>
+                    <p>8.24 MB</p>
+                </div>
+            </div>
+
+            <button class="add-cart--button">Add to Cart</button>
+        </div>
+
+        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/default_cover.png' %}{% endif %}" alt="Product Cover Image" class="cover">
+        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/default_cover.png' %}{% endif %}" alt="Product Cover Image" class="cover">
+        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/default_cover.png' %}{% endif %}" alt="Product Cover Image" class="cover">
+        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/default_cover.png' %}{% endif %}" alt="Product Cover Image" class="cover">
+    </main>
+{% endblock content %}
