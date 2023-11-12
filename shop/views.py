@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 
-from .models import Category, Product
+from .models import Category, Format, Product, Screenshot
 
 
 def product_list(request, category_slug=None):
@@ -19,4 +19,10 @@ def product_list(request, category_slug=None):
 
 def product_detail(request, id, slug):
     product = get_object_or_404(Product, id=id, slug=slug)
-    return render(request, 'product/detail.html', {'product': product})
+    formats = Format.objects.filter(product__id=str(id))
+    screenshots = Screenshot.objects.filter(product__id=str(id))
+
+    print(f'Formats: {formats}')
+    print(f'Screenshots: {screenshots}')
+
+    return render(request, 'product/detail.html', {'product': product, 'formats': formats, 'screenshots': screenshots})

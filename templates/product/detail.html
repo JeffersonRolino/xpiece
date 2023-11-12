@@ -21,7 +21,7 @@
             <div class="product-detail--labels">
                 <div class="product-detail--label">
                     <p class="label-title">Formats</p>
-                    <p>png, svg, eps</p>
+                    <p>{% for format in formats %}.{{ format }} {% endfor %}</p>
                 </div>
     
                 <div class="product-detail--label">
