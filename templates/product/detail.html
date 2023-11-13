@@ -34,7 +34,7 @@
         </div>
 
         {% for screenshot in screenshots %}
-            <img src="{% if screenshot %}/media/{{ screenshot }}{% else %}{% static 'images/default_cover.png' %}{% endif %}" alt="Product Cover Image" class="cover">
+            <img src="{{ screenshot.image.url }}" alt="Product Cover Image" class="cover">
         {% endfor %}
     </main>
 {% endblock content %}
