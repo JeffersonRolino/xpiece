@@ -20,7 +20,7 @@ def product_list(request, category_slug=None):
 def product_detail(request, id, slug):
     product = get_object_or_404(Product, id=id, slug=slug)
     formats = Format.objects.filter(product__id=str(id))
-    screenshots = Screenshot.objects.filter(product__id=str(id))
+    screenshots = Screenshot.objects.filter(product__id=str(id)).values_list('image', flat=True)
 
     print(f'Formats: {formats}')
     print(f'Screenshots: {screenshots}')

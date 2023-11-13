@@ -24,7 +24,7 @@
             <div class="product-card">
                 <div class="thumbnail">
                     <a href="{{ product.get_absolute_url }}">
-                        <img src="{% if product.image %}{{product.image.url }} {% else %}{% static "images/default_image.png" %} {% endif %}" alt="">
+                        <img src="{% if product.thumbnail %}{{product.thumbnail.url }} {% else %}{% static "images/default_thumbnail.png" %} {% endif %}" alt="">
                     </a>
                 </div>
                 

@@ -5,7 +5,7 @@
 
 {% block content %}
     <main class="product-content grid-container">
-        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/default_cover.png' %}{% endif %}" alt="Product Cover Image" class="cover">
+        <img src="{% if product.cover %}{{ product.cover.url }}{% else %}{% static 'images/default_cover.png' %}{% endif %}" alt="Product Cover Image" class="cover">
         <div class="product-detail">
             <div class="category-price">
                 <h2>
@@ -33,9 +33,8 @@
             <button class="add-cart--button">Add to Cart</button>
         </div>
 
-        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/default_cover.png' %}{% endif %}" alt="Product Cover Image" class="cover">
-        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/default_cover.png' %}{% endif %}" alt="Product Cover Image" class="cover">
-        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/default_cover.png' %}{% endif %}" alt="Product Cover Image" class="cover">
-        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/default_cover.png' %}{% endif %}" alt="Product Cover Image" class="cover">
+        {% for screenshot in screenshots %}
+            <img src="{% if screenshot %}/media/{{ screenshot }}{% else %}{% static 'images/default_cover.png' %}{% endif %}" alt="Product Cover Image" class="cover">
+        {% endfor %}
     </main>
 {% endblock content %}

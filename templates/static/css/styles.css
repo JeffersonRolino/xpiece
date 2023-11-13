@@ -488,6 +488,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 8px;
 
 }
 
@@ -516,7 +517,7 @@ footer {
     font-size: var(--font-size-p);
     font-weight: var(--font-weight-semi-bold);
     align-self: center;
-    margin-top: auto;
+    margin-top: 32px;
 }
 
 .add-cart--button:hover {
