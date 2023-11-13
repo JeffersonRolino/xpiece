@@ -373,17 +373,17 @@ footer {
 }
 
 .thumbnail {
-    height: 330px;
+    height: 250px;
     background: var(--color-light-gray);
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    object-fit: contain;
+
 }
 
 .thumbnail img {
-    height: 100%;
+    width: 102%;
 }
 
 .label {
@@ -437,6 +437,8 @@ footer {
     grid-column: span 8;
     width: 100%;
     max-width: 930px;
+    border: 3px solid var(--color-light-gray);
+    border-radius: 32px;
 }
 
 .product-detail {
