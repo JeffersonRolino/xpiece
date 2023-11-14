@@ -13,8 +13,7 @@ def cart_add(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     form = CartAddProductForm(request.POST)
     if form.is_valid():
-        cleaned_data = form.cleaned_data
-        cart.add(product=product, quantity=cleaned_data['quantity'], override_quantity=cleaned_data['override'])
+        cart.add(product=product)
     return redirect('cart:cart_detail')
 
 

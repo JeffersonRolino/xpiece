@@ -29,11 +29,10 @@
                     <p>8.24 MB</p>
                 </div>
             </div>
-
-            <form action="{% url 'cart:cart_add' product.id %}" method="post">
-                {{ cart_add_product }}
+            
+            <form class="add-to-cart" action="{% url 'cart:cart_add' product.id %}" method="post">
                 {% csrf_token %}
-                <input type="submit" class="add-cart--button" valye="Add to Cart">
+                <input type="submit" class="add-cart--button" value="Add to Cart">
             </form>
 
         </div>

@@ -13,17 +13,16 @@
                         <li>Remove</li>
                         <li>Image</li>
                         <li>Product</li>
-                        <li>Quantity</li>
-                        <li>Item Price</li>
-                        <li>Total Price</li>
+                        <li>Price</li>
                     </ul>
 
                     {% for item in cart %}
                         {% with product=item.product %}
                             <ul class="cart-products grid-container">
-                                <li>
+                                <li class="remove">
                                     <form action="{% url 'cart:cart_remove' product.id %}" method="post">
-                                        <input class="button remove" type="submit" value="remove">
+                                        {% csrf_token %}
+                                        <input type="submit" value="x">
                                     </form>
                                 </li>
                                 <li>
@@ -32,9 +31,7 @@
                                     </a>
                                 </li>
                                 <li>{{ product.name }}</li>
-                                <li>{{ item.quantity }}</li>
                                 <li>${{ item.price }}</li>
-                                <li>${{ item.total_price }}</li>
                             </ul>                    
                         {% endwith %}
                     {% endfor %}
