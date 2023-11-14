@@ -30,7 +30,12 @@
                 </div>
             </div>
 
-            <button class="add-cart--button">Add to Cart</button>
+            <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                {{ cart_add_product }}
+                {% csrf_token %}
+                <input type="submit" class="add-cart--button" valye="Add to Cart">
+            </form>
+
         </div>
 
         {% for screenshot in screenshots %}

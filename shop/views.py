@@ -1,5 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 
+from cart.forms import CartAddProductForm
+
 from .models import Category, Format, Product, Screenshot
 
 
@@ -21,5 +23,9 @@ def product_detail(request, id, slug):
     product = get_object_or_404(Product, id=id, slug=slug)
     formats = Format.objects.filter(product__id=str(id))
     screenshots = Screenshot.objects.filter(product__id=str(id))
+    cart_add_product = CartAddProductForm()
 
-    return render(request, 'product/detail.html', {'product': product, 'formats': formats, 'screenshots': screenshots})
+    return render(request, 'product/detail.html', {'product': product,
+                                                   'formats': formats,
+                                                   'screenshots': screenshots,
+                                                   'cart_add_product': cart_add_product})

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Shopping cart{% endblock title %}
+
+{% block content %}
+    <div class="grid-container">
+        <main class="cart-content">
+            <h1>Shopping Cart</h1>
+                <div class="cart">
+
+                    <ul class="cart-labels grid-container">
+                        <li>Remove</li>
+                        <li>Image</li>
+                        <li>Product</li>
+                        <li>Quantity</li>
+                        <li>Item Price</li>
+                        <li>Total Price</li>
+                    </ul>
+
+                    {% for item in cart %}
+                        {% with product=item.product %}
+                            <ul class="cart-products grid-container">
+                                <li>
+                                    <form action="{% url 'cart:cart_remove' product.id %}" method="post">
+                                        <input class="button remove" type="submit" value="remove">
+                                    </form>
+                                </li>
+                                <li>
+                                    <a href="{{ product.get_absolute_url }}">
+                                        <img src="{% if product.thumbnail %}{{product.thumbnail.url}}{% else %}{% static 'images/default_thumbnail.png' %}{% endif %}" alt="">
+                                    </a>
+                                </li>
+                                <li>{{ product.name }}</li>
+                                <li>{{ item.quantity }}</li>
+                                <li>${{ item.price }}</li>
+                                <li>${{ item.total_price }}</li>
+                            </ul>                    
+                        {% endwith %}
+                    {% endfor %}
+
+                    <ul class="cart-total grid-container">
+                        <li class="total-label">Total</li>
+                        <li class="total-price">${{ cart.get_total_price }}</li>
+                    </ul>
+
+                    <p class="flex-text-space-between">
+                        <a href="{% url 'shop:product_list' %}" class="button light">Back</a>
+                        <a href="#" class="button">Checkout</a>
+                    </p>
+                </div>
+        </main>
+    </div>
+{% endblock content %}
