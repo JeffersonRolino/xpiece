@@ -59,8 +59,8 @@ class Cart:
     def __iter__(self):
         """
         Iterable padrão da classe.
-        Itera sobre os items no carrinho e pega os
-        produtos do banco de dados.
+        Itera sobre os items no carrinho e pega
+        os produtos do banco de dados.
         """
         product_ids = self.cart.keys()
         products = Product.objects.filter(id__in=product_ids)
