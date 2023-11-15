@@ -16,5 +16,12 @@
     <div id="icons-navbar"> 
         <a href="#"><i class="fa-solid fa-user"></i></a>
         <a href="{% url "cart:cart_detail" %}"><i class="fa-solid fa-cart-shopping"></i></a>
+        {% with items=cart|length %}
+            {% if items > 0 %}
+                <span class="cart-number">{{ cart|length }}</span>
+            {% endif %}
+        
+        
+        {% endwith %}
     </div>
 </header>

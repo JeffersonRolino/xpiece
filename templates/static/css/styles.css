@@ -185,6 +185,7 @@ header {
 #icons-navbar {
     grid-column: 11 / span 2;
     justify-self: end;
+    position: relative;
 }
 
 #icons-navbar i {
@@ -198,6 +199,19 @@ header {
     color: var(--color-primary);
 }
 
+.cart-number {
+    display: inline-block;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    text-align: center;
+    border-radius: 32px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 12px;
+}
 
 /*************************************************************************
   Footer
