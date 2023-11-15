@@ -16,12 +16,10 @@ class Cart:
         if not cart:
             cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
-        print(cart)
 
     def add(self, product):
         """
         Adiciona um produto no carrinho.
-        Ou atualiza a quantidade já existente.
         """
         product_id = str(product.id)
         if product_id not in self.cart:
@@ -70,5 +68,4 @@ class Cart:
             yield item
 
     def __len__(self):
-        pass
         return len(self.cart.values())
