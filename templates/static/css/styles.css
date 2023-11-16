@@ -663,3 +663,99 @@ footer {
     justify-content: space-between;
 }
 
+
+/*************************************************************************
+  Orders
+**************************************************************************/
+
+.order-content h1 {
+    grid-column: span 12;
+    align-self: center;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.order-content .order-info {
+    grid-column: span 6;
+    border: 3px solid var(--color-light-gray);
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.order-content .order-info h5 {
+    margin-bottom: 16px;
+}
+
+.order-content .order-info li {
+    list-style: none;
+    text-decoration: none;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-light-gray);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.order-content .order-info .total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.order-content .order-info .total p {
+    display: inline-block;
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.order-content .order-form {
+    grid-column: span 6;
+    border: 3px solid var(--color-light-gray);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-content .order-form p {
+    margin: 8px 0;
+}
+
+.order-content .order-form p label {
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
+    color: var(--color-gray);
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.order-content .order-form p input {
+    width: 100%;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 4px;
+}
+
+.order-content .order-form p input:focus {
+    outline: none !important;
+    border: 1px solid var(--color-primary);
+}
+
+.order-content .order-form p input[type=submit] {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 64px;
+    padding: 16px;
+    font-size: var(--font-size-p);
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.order-content .order-form p:nth-child(4) {
+    align-self: center;
+}
+
+.order-content .order-form p input[type=submit]:hover {
+    background-color: var(--color-dark);
+    cursor: pointer;
+}
