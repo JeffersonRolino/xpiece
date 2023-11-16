@@ -134,3 +134,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Configuração do Carrinho de Compras
 CART_SESSION_ID = 'cart'
+
+
+# Configurações da API do Stripe (método de pagamento)
+STRIPE_PUBLISHABLE_KEY = env('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
+STRIPE_API_VERSION = env('STRIPE_API_VERSION')
