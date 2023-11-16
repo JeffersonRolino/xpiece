@@ -759,3 +759,23 @@ footer {
     background-color: var(--color-dark);
     cursor: pointer;
 }
+
+.purchase-confirmed .thanks {
+    grid-column: span 12;
+    /* border: 3px solid var(--color-light-gray);
+    border-radius: 16px; */
+    padding: 32px;
+    text-align: center;
+}
+
+.purchase-confirmed h1 {
+    font-size: var(--font-size-h4);
+}
+
+.purchase-confirmed p {
+    margin: 8px 0;
+}
+
+.purchase-confirmed a {
+    margin-top: 64px;
+}
