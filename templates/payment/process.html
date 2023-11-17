@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Payment{% endblock title %}
+
+{% block content %}
+    <main class="payment-content">
+        <h1>Your Order</h1>
+        <div class="payment">
+            <ul class="payment-labels grid-container">
+                <li class="image">Image</li>
+                <li>Product</li>
+                <li class="price">Price</li>
+            </ul>
+
+            {% for item in order.items.all %}
+                <ul class="payment-products grid-container">
+                    <li>
+                        <img src="{% if item.product.thumbnail %}{{ item.product.thumbnail.url }}{% else %}{% static 'images/default_thumbnail.png' %}{% endif %}">
+                    </li>
+                    <li>{{ item.product.name }}</li>
+                    <li class="price">${{ item.price }}</li>
+                </ul>
+            {% endfor %}
+
+            <ul class="payment-total grid-container">
+                <li class="total-label">Total</li>
+                <li class="total-price">${{ order.get_total }}</li>
+            </ul>
+
+            <form action="{% url 'payment:process' %}" method="post">
+                <input class="payment-button" type="submit" value="Pay Now">
+                {% csrf_token %}
+            </form>
+        </div>
+    </main>
+
+{% endblock content %}
+

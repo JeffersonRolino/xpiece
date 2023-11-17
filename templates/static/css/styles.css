@@ -779,3 +779,129 @@ footer {
 .purchase-confirmed a {
     margin-top: 64px;
 }
+
+
+/*************************************************************************
+  Payment
+**************************************************************************/
+
+.payment-content {
+    grid-column: span 12;
+}
+
+.payment-content h1 {
+    font-size: var(--font-size-h5);
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.payment-content li {
+    list-style: none;
+}
+
+.payment {
+    display: flex;
+    flex-direction: column;
+    max-width: 1410px;
+    margin: 0 auto;
+}
+
+.payment img {
+    max-width: 180px;
+    border-radius: 8px;
+}
+
+.payment .image {
+    padding-left: 16px;
+}
+
+.payment .payment-labels {
+    font-weight: var(--font-weight-bold);
+    border-top: 3px solid var(--color-light-gray);
+    border-bottom: 3px solid var(--color-light-gray);
+    padding: 16px 0px;
+    justify-items: start;
+    width: 100%;
+    grid-template-columns: 2fr 9fr 1fr;
+}
+
+.payment .payment-products {
+    padding: 16px 0px;
+    justify-items: start;
+    align-items: center;
+    width: 100%;
+    grid-template-columns: 2fr 9fr 1fr;
+    border-bottom: 1px solid var(--color-light-gray);
+}
+
+.payment .payment-total {
+    padding: 16px 0px;
+    justify-items: center;
+    width: 100%;
+    font-weight: var(--font-weight-bold);
+    border-top: 3px solid var(--color-light-gray);
+}
+
+.payment .payment-total .total-label {
+    grid-column: 11 / span 1;
+    justify-self: end;
+}
+
+.payment .total-price {
+    grid-column: 12 / span 1;
+    justify-self: end;
+    padding-right: 32px;
+}
+
+.payment .price {
+    justify-self: end;
+    padding-right: 32px;
+}
+
+.payment-button {
+    min-width: 80px;
+    padding: 16px 32px;
+    text-align: center;
+    border: none;
+    border-radius: 32px;
+    text-decoration: none;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: var(--font-size-p);
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.payment-button:hover {
+    cursor: pointer;
+    background-color: var(--color-dark);
+}
+
+.payment form {
+    margin-top: 32px;
+    align-self: flex-end;
+}
+
+.payment-processed {
+    grid-column: span 12;
+    grid-row: 1;
+    min-height: 360px;
+}
+
+.payment-processed h1 {
+    font-size: var(--font-size-h4);
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 0;
+}
+
+.payment-processed p {
+    font-size: var(--font-size-p);
+    text-align: center;
+    grid-column: span 12;
+    margin: 0;
+    padding: 0;
+}
+
+.payment-processed .button {
+    margin-top: 64px;
+}

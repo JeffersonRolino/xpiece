@@ -141,3 +141,7 @@ CART_SESSION_ID = 'cart'
 STRIPE_PUBLISHABLE_KEY = env('STRIPE_PUBLISHABLE_KEY')
 STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
 STRIPE_API_VERSION = env('STRIPE_API_VERSION')
+
+
+#Configurando envio de email no console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
