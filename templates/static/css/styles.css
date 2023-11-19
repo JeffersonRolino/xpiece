@@ -905,3 +905,22 @@ footer {
 .payment-processed .button {
     margin-top: 64px;
 }
+
+/*************************************************************************
+  Download
+**************************************************************************/
+
+.order_data, .buyer_data, .items_data {
+    width: 100%;
+    justify-self: center;
+    grid-column: span 12;
+}
+
+.order_data {
+    text-align: center;
+}
+
+.items_data table {
+    margin-top: 32px;
+    width: 100%;
+}

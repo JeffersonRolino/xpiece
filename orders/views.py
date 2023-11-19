@@ -1,10 +1,14 @@
-from django.shortcuts import redirect, render
-from django.urls import reverse
+from django.conf import settings
+from django.contrib.admin.views.decorators import staff_member_required
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, redirect, render
+from django.template.loader import render_to_string
+from django.urls import reverse, reverse_lazy
 
 from cart.cart import Cart
 
 from .forms import CreateOrderForm
-from .models import OrderItem
+from .models import Order, OrderItem
 from .tasks import order_created
 
 
@@ -26,3 +30,11 @@ def order_create(request):
     else:
         form = CreateOrderForm()
         return render(request, 'orders/order/create.html', {'cart': cart, 'form': form})
+
+def order_items_download(request, id):
+    order = get_object_or_404(Order, id=id)
+    context = {'order': order}
+    return render(request, 'orders/order/download.html', context)
+
+def redirect_me(request, id):
+    return redirect(reverse_lazy('orders:order_download', kwargs={'id':id}))

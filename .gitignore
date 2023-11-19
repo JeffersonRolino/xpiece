@@ -163,3 +163,6 @@ cython_debug/
 
 # Ignore Media  folder
 /media
+
+# Ignore Static  folder
+/static
