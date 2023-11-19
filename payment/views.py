@@ -16,7 +16,7 @@ def payment_process(request):
     order = get_object_or_404(Order, id=order_id)
 
     if request.method == 'POST':
-        success_url = request.build_absolute_uri(reverse('payment:completed', kwargs={'id':order.id}))
+        success_url = request.build_absolute_uri(reverse('payment:completed', kwargs={'id':order.id, 'token':order.token}))
         cancel_url = request.build_absolute_uri(reverse('payment:canceled', kwargs={'id':order.id}))
         # Criando dados de checkout para o Stripe
         session_data = {
@@ -49,7 +49,7 @@ def payment_process(request):
         return render(request, 'payment/process.html', locals())
 
 
-def payment_completed(request, id):
+def payment_completed(request, id, token):
     order = get_object_or_404(Order, id=id)
     context = {'order': order}
     return render(request, 'payment/completed.html', context)

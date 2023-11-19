@@ -1,3 +1,6 @@
+import random
+import string
+
 from django.conf import settings
 from django.db import models
 
@@ -12,6 +15,8 @@ class Order(models.Model):
     updated = models.DateTimeField(auto_now=True)
     paid = models.BooleanField(default=False)
     stripe_id = models.CharField(max_length=250, blank=True)
+    token = models.SlugField(max_length=32, blank=True, null=True)
+
 
     class Meta:
         ordering = ['-created']
@@ -19,8 +24,10 @@ class Order(models.Model):
             models.Index(fields=['-created']),
         ]
 
+
     def get_total(self):
         return sum(item.get_price() for item in self.items.all())
+
 
     def get_stripe_url(self):
         if not self.stripe_id:
@@ -31,6 +38,25 @@ class Order(models.Model):
             path = '/'
 
         return f'https://dashboard.stripe.com{path}payments/{self.stripe_id}'
+    
+
+    def generate_token(self):
+        letters = string.ascii_letters
+        digits = string.digits
+
+        random.seed(self.id)
+
+        characters = letters + digits
+
+        token = random.choices(characters, k=32)
+        token = ''.join(token)
+
+        return token
+
+    def save(self, **kwargs):
+        if not self.token:
+            self.token = self.generate_token()
+        super(Order, self).save(**kwargs)
 
     def __str__(self):
         return f'Order {self.id}'

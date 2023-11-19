@@ -6,7 +6,13 @@
         <div class="payment-processed">
             <h1>Thank you for your purchase</h1>
             <p>Your payment has been processed successfully.</p>
-            <p>It Works! {{ order.id }}</p>
+            <p>It Works! {{ order.paid }}</p>
+
+            {% if order.paid %}
+                <h3>Order is Paid</h3>
+            {% else %}
+                <h3>Waiting Payment</h3>
+            {% endif %}
             <p>
                 <a href="{% url 'shop:product_list' %}" class="button light">Return to Store</a>
             </p>
