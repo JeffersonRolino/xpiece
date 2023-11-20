@@ -1,25 +1,33 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block title %}Payment Successful{% endblock %}
 
 {% block content %}
     <div class="grid-container">
-        <div class="payment-processed">
+        <main class="payment-processed">
             <h1>Thank you for your purchase</h1>
             <p>Your payment has been processed successfully.</p>
-            <p>It Works! {{ order.paid }}</p>
+            <p>Download your files below...</p>
 
             {% for item in order.items.all  %}
-                <a href="{{ item.product.file.url }}">{{ item.product.name }}</a>
+                {% with product=item.product %}
+                    <ul class="download-products grid-container">
+                        <li>
+                            <img src="{% if product.thumbnail %}{{product.thumbnail.url}}{% else %}{% static 'images/default_thumbnail.png' %}{% endif %}" alt="">
+                        </li>
+                        <li><h6>{{ product.name }}</h6></li>
+                        <li>{{ product.category }}</li>
+                        <li class="download-btn-col">
+                            <a href="{{ product.file.url }}" class="button">download</a>
+                        </li>
+                    </ul>                    
+                {% endwith %}                
             {% endfor %}
 
-            {% if order.paid %}
-                <h3>Order is Paid</h3>
-            {% else %}
-                <h3>Waiting Payment</h3>
-            {% endif %}
             <p>
                 <a href="{% url 'shop:product_list' %}" class="button light">Return to Store</a>
             </p>
-        </div>
+        </main>
     </div>
 {% endblock %}
