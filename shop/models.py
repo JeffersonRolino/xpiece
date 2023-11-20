@@ -32,6 +32,7 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     published = models.BooleanField(default=True)
+    file = models.FileField(upload_to='products/download/', blank=True)
 
     class Meta:
         ordering = ['name']

@@ -8,6 +8,10 @@
             <p>Your payment has been processed successfully.</p>
             <p>It Works! {{ order.paid }}</p>
 
+            {% for item in order.items.all  %}
+                <a href="{{ item.product.file.url }}">{{ item.product.name }}</a>
+            {% endfor %}
+
             {% if order.paid %}
                 <h3>Order is Paid</h3>
             {% else %}
