@@ -188,6 +188,17 @@ header {
     position: relative;
 }
 
+#icons-navbar a {
+    text-decoration: none;
+    font-size: var(--font-size-p);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-dark);
+}
+
+#icons-navbar a:nth-child(1) {
+    font-weight: var(--font-weight-semi-bold);
+}
+
 #icons-navbar i {
    font-size: var(--font-size-h6);
    margin-left: 16px;
@@ -959,4 +970,128 @@ footer {
 
 .download-btn-col {
     justify-self: end;
+}
+
+
+/*************************************************************************
+  Login
+**************************************************************************/
+/* .login .grid-container {
+    justify-items: center;
+} */
+
+.login {
+    grid-column: 5 / span 4;
+    row-gap: 0px;
+    border: 3px solid var(--color-light-gray);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    min-width: 360px;
+}
+
+.login h1 {
+    width: 100%;
+    font-size: var(--font-size-h4);
+    text-align: center;
+}
+
+.login p {
+    width: 100%;
+    margin: 8px 0px;
+}
+
+.login-header {
+    margin-bottom: 16px;
+}
+
+.login form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login form ul {
+    list-style: none;
+    line-height: 1.4;
+}
+
+.login form .errorlist {
+    color: var(--color-warning);
+}
+
+
+.login form p {
+    margin: 12px 0;
+    width: 100%;
+}
+
+.login form p label {
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
+    color: var(--color-gray);
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.login form p input {
+    width: 100%;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 4px;
+}
+
+.login form p input:focus {
+    outline: none !important;
+    border: 1px solid var(--color-primary);
+}
+
+.login form p input[type=submit] {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 64px;
+    padding: 16px;
+    font-size: var(--font-size-p);
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.login form p input[type=submit]:hover {
+    background-color: var(--color-dark);
+    cursor: pointer;
+
+}
+
+
+/*************************************************************************
+  Logout
+**************************************************************************/
+.logout .grid-container {
+    row-gap: 0px;
+    min-height: 360px;
+}
+
+.logout p {
+    grid-column: span 12;
+    justify-self: center;
+}
+
+
+/*************************************************************************
+  Dashboard
+**************************************************************************/
+
+.dashboard .grid-container {
+    row-gap: 0px;
+}
+
+.dashboard h1 {
+    grid-column: span 12;
+    font-size: var(--font-size-h4);
+}
+
+.dashboard p {
+    grid-column: span 12;
 }
