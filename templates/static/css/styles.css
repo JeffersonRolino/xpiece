@@ -973,14 +973,11 @@ footer {
 }
 
 
-/*************************************************************************
-  Login
-**************************************************************************/
-/* .login .grid-container {
-    justify-items: center;
-} */
 
-.login {
+/*************************************************************************
+  Registration
+**************************************************************************/
+.registration {
     grid-column: 5 / span 4;
     row-gap: 0px;
     border: 3px solid var(--color-light-gray);
@@ -991,48 +988,57 @@ footer {
     min-width: 360px;
 }
 
-.login h1 {
+.registration h5 {
     width: 100%;
-    font-size: var(--font-size-h4);
     text-align: center;
     margin-bottom: 8px;
 }
 
-.login p {
+.registration p {
     width: 100%;
     margin: 8px 0px;
 }
 
-.login form {
+.registration a {
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+.registration form {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.login form ul {
+.registration form ul {
     list-style: none;
     line-height: 1.4;
 }
 
-.login form .errorlist {
+.registration form ul li {
+    list-style: none;
+    line-height: 1.6;
+    font-size: var(--font-size-small);
+}
+
+.registration form .errorlist {
     color: var(--color-warning);
 }
 
-
-.login form p {
+.registration form p {
     margin: 12px 0;
     width: 100%;
 }
 
-.login form p label {
+.registration form p label {
     font-size: var(--font-size-small);
     text-transform: uppercase;
     color: var(--color-gray);
     font-weight: var(--font-weight-semi-bold);
 }
 
-.login form p input {
+.registration form p input {
     width: 100%;
     border: 1px solid var(--color-light-gray);
     border-radius: 8px;
@@ -1040,12 +1046,12 @@ footer {
     margin-top: 4px;
 }
 
-.login form p input:focus {
+.registration form p input:focus {
     outline: none !important;
     border: 1px solid var(--color-primary);
 }
 
-.login form p input[type=submit] {
+.registration form p input[type=submit] {
     display: inline-block;
     background-color: var(--color-primary);
     color: var(--color-white);
@@ -1055,7 +1061,7 @@ footer {
     font-weight: var(--font-weight-semi-bold);
 }
 
-.login form p input[type=submit]:hover {
+.registration form p input[type=submit]:hover {
     background-color: var(--color-dark);
     cursor: pointer;
 
@@ -1063,16 +1069,29 @@ footer {
 
 
 /*************************************************************************
-  Logout
+  Registration Message
 **************************************************************************/
-.logout .grid-container {
+.registration-message {
+    grid-column: 5 / span 4;
     row-gap: 0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-width: 360px;
     min-height: 360px;
 }
 
-.logout p {
-    grid-column: span 12;
-    justify-self: center;
+.registration-message h5 {
+    margin-bottom: 16px;
+}
+
+.registration-message p {
+    margin: 8px 0px;
+}
+
+.registration-message a {
+    text-decoration: none;
+    color: var(--color-primary);
 }
 
 
@@ -1091,103 +1110,4 @@ footer {
 
 .dashboard p {
     grid-column: span 12;
-}
-
-/*************************************************************************
-  Change Password
-**************************************************************************/
-
-.change-password {
-    grid-column: 5 / span 4;
-    row-gap: 0px;
-    border: 3px solid var(--color-light-gray);
-    border-radius: 16px;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    min-width: 360px;
-}
-
-.change-password h5 {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 8px;
-}
-
-.change-password p {
-    width: 100%;
-    margin: 8px 0px;
-}
-
-.change-password form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.change-password form ul li {
-    list-style: none;
-    line-height: 1.6;
-    font-size: var(--font-size-small);
-}
-
-.change-password form .errorlist {
-    color: var(--color-warning);
-}
-
-
-.change-password form p {
-    margin: 12px 0;
-    width: 100%;
-}
-
-.change-password form p label {
-    font-size: var(--font-size-small);
-    text-transform: uppercase;
-    color: var(--color-gray);
-    font-weight: var(--font-weight-semi-bold);
-}
-
-.change-password form p input {
-    width: 100%;
-    border: 1px solid var(--color-light-gray);
-    border-radius: 8px;
-    padding: 8px;
-    margin-top: 4px;
-}
-
-.change-password form p input:focus {
-    outline: none !important;
-    border: 1px solid var(--color-primary);
-}
-
-.change-password form p input[type=submit] {
-    display: inline-block;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border-radius: 64px;
-    padding: 16px;
-    font-size: var(--font-size-p);
-    font-weight: var(--font-weight-semi-bold);
-}
-
-.change-password form p input[type=submit]:hover {
-    background-color: var(--color-dark);
-    cursor: pointer;
-}
-
-
-/*************************************************************************
-  Password Changed
-**************************************************************************/
-
-.password-changed {
-    grid-column: 5 / span 4;
-    row-gap: 0px;
-    text-align: center;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    min-width: 360px;
 }

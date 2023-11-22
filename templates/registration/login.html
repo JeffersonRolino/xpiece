@@ -5,17 +5,15 @@
 
 {% block content %}
     <div class="grid-container">
-        <main class="login">
-            <h1>Login</h1>
-
+        <main class="registration">
+            <h5>Login</h5>
             <form action="{% url 'login' %}" method="post">
                 {{ form.as_p }}
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ next }}">
                 <p><input type="submit" value="Login"></p>
             </form>
-
+            <p class="forgot-password"><a href="{% url 'password_reset' %}">Forgot password?</a></p>
         </main>    
     </div>
-    
 {% endblock content %}
