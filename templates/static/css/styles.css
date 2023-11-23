@@ -1004,6 +1004,12 @@ footer {
     color: var(--color-dark);
 }
 
+.registration .helptext {
+    font-size: var(--font-size-small);
+    padding-top: 8px;
+    display: block;
+}
+
 .registration form {
     width: 100%;
     display: flex;
@@ -1064,7 +1070,20 @@ footer {
 .registration form p input[type=submit]:hover {
     background-color: var(--color-dark);
     cursor: pointer;
+}
 
+.registration .registration-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.registration .registration-footer a {
+    font-size: 14px;
+}
+
+.registration .registration-footer .forgot-password {
+    justify-self: end;
+    text-align: right;
 }
 
 

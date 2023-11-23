@@ -13,7 +13,10 @@
                 <input type="hidden" name="next" value="{{ next }}">
                 <p><input type="submit" value="Login"></p>
             </form>
-            <p class="forgot-password"><a href="{% url 'password_reset' %}">Forgot password?</a></p>
+            <div class="registration-footer">
+                <p class="sign-in"><a href="{% url 'register' %}">Sign in</a></p>
+                <p class="forgot-password"><a href="{% url 'password_reset' %}">Forgot password?</a></p>
+            </div>
         </main>    
     </div>
 {% endblock content %}

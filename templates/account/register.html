@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Create an account{% endblock title %}
+
+{% block content %}
+    <div class="grid-container">
+        <main class="registration">
+            <h5>Create a account</h5>
+            <form method="post">
+                {{ user_form.as_p }}
+                <p><input type="submit" value="Create Account"></p>
+                {% csrf_token %}
+            </form>
+        </main>
+    </div>    
+{% endblock content %}

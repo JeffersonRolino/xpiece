@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock title %}
+
+{% block content %}
+    <div class="grid-container">
+        <main class="registration-message">
+            <h5>Welcome {{ new_user.first_name }}</h5>
+            <p>Your account has been successfully created.</p>
+            <p>You can login <a href="{% url 'login' %}">here</a></p>
+        </main>
+    </div>
+{% endblock content %}
+
