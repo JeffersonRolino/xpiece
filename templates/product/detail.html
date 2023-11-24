@@ -23,11 +23,6 @@
                     <p class="label-title">Formats</p>
                     <p>{% for format in formats %}.{{ format }} {% endfor %}</p>
                 </div>
-    
-                <div class="product-detail--label">
-                    <p class="label-title">Total Size</p>
-                    <p>8.24 MB</p>
-                </div>
             </div>
             
             <form class="add-to-cart" action="{% url 'cart:cart_add' product.id %}" method="post">

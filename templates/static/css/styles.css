@@ -116,6 +116,7 @@ p {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    padding-top: 32px;
 }
   
 .section-p1 {
@@ -572,7 +573,6 @@ footer {
 .product-detail--labels{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     margin-top: 8px;
 
 }
