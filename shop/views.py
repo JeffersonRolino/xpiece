@@ -29,3 +29,13 @@ def product_detail(request, id, slug):
                                                    'formats': formats,
                                                    'screenshots': screenshots,
                                                    'cart_add_product': cart_add_product})
+
+
+def about(request):
+    context = {}
+    return render(request, 'about.html', context)
+
+
+def contact(request):
+    context = {}
+    return render(request, 'contact.html', context)
