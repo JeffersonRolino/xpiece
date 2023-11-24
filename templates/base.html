@@ -10,12 +10,16 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    {% include "components/header.html" %}
-
-    <div class="content">
-        {% block content %}{% endblock content %}
+    <div id="wrapper">
+        {% include "components/header.html" %}
+    
+        <div class="content">
+            {% block content %}{% endblock content %}
+        </div>
+    
+        {% include "components/footer.html" %}
     </div>
 
-    {% include "components/footer.html" %}
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
