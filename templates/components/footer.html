@@ -3,25 +3,9 @@
         <div id="footer-menus">
             <div id="footer-categories">
                 <h5>Categories</h5>
-                <a href="#">UI Kits</a>
-                <a href="#">Illustrations</a>
-                <a href="#">Posters</a>
-            </div>
-
-            <div id="footer-services">
-                <h5>Services</h5>
-                <a href="#">Logo Design</a>
-                <a href="#">Visual Identity</a>
-                <a href="#">User Interfaces</a>
-                <a href="#">Web Design</a>
-            </div>
-
-            <div id="footer-about">
-                <h5>About</h5>
-                <a href="#">Logo Design</a>
-                <a href="#">Visual Identity</a>
-                <a href="#">User Interfaces</a>
-                <a href="#">Web Design</a>
+                {% for category in categories %}
+                    <a href="{{ category.get_absolute_url}}">{{ category.name }}</a>
+                {% endfor %}
             </div>
         </div>
         
@@ -50,6 +34,16 @@
                     <input type="email" name="newsletter" placeholder="Insert your email...">
                 </form>
             </div>
+        </div>
+
+        <div id="footer-visit">
+            <h5>Contact Us</h5>
+            <p>Av. Guedner, nº 1610 - Bloco 11</p>
+            <p>Jardim Aclimação</p>
+            <p>Maringá / PR</p>
+            <br>
+            <p>55 44 3027 6360</p>
+            <p>0800 604 4422</p>
         </div>
 
         <div id="copyright">
