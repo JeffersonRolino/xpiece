@@ -31,7 +31,7 @@ def order_create(request):
             # Redireciona para pagamento
             return redirect(reverse('payment:process'))
     else:
-        form = CreateOrderForm(initial={'first_name': user.first_name, 'last_name': user.last_name, 'email': user.email })
+        form = CreateOrderForm(initial={'user': user, 'first_name': user.first_name, 'last_name': user.last_name, 'email': user.email })
         return render(request, 'orders/order/create.html', {'cart': cart, 'form': form, 'user': user})
 
 def order_items_download(request, id):
