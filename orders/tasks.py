@@ -9,8 +9,9 @@ def order_created(order_id):
     a ordem de compra for criada com sucesso...
     """
     order = Order.objects.get(id=order_id)
-    subject = f'Order number {order_id}'
-    message = f'Hello {order.first_name},\n You have successfully placed an order.' \
+    subject = f'Xpiece - order number {order_id}'
+    message = f'Hello {order.first_name},\n' \
+              f'You have successfully placed an order.\n' \
               f'Your order ID is {order.id}.'
     mail_sent = send_mail(subject, message, 'admin@xpiece.com', [order.email])
 

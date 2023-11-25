@@ -2,9 +2,12 @@ from decimal import Decimal
 
 import stripe
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 
 from orders.models import Order
+
+from .tasks import send_email_after_payment
 
 # Instanciando stripe
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -48,11 +51,14 @@ def payment_process(request):
     else:
         return render(request, 'payment/process.html', locals())
 
-
+@login_required
 def payment_completed(request, id, token):
     order = get_object_or_404(Order, id=id)
+    url = request.build_absolute_uri(reverse('payment:completed', kwargs={'id':order.id, 'token':order.token}))
+    send_email_after_payment(order, url)
     context = {'order': order}
     return render(request, 'payment/completed.html', context)
+
 
 def payment_canceled(request, id):
     order = get_object_or_404(Order, id=id)
