@@ -1101,6 +1101,15 @@ footer {
     font-weight: var(--font-weight-semi-bold);
 }
 
+
+.registration form p input[type=checkbox] {
+    display: inline;
+    justify-self: start;
+    text-align: left;
+    width: 16px;
+    margin-left: 16px;
+}
+
 .registration form p input[type=submit]:hover {
     background-color: var(--color-dark);
     cursor: pointer;
@@ -1152,15 +1161,192 @@ footer {
   Dashboard
 **************************************************************************/
 
-.dashboard .grid-container {
-    row-gap: 0px;
+.dashboard {
+    grid-column: span 12;
+    /* border: 3px solid var(--color-light-gray); */
+    border-radius: 16px;
+    width: 100%;
 }
 
-.dashboard h1 {
-    grid-column: span 12;
-    font-size: var(--font-size-h4);
+.dashboard-menu {
+    grid-column: 1 / span 3;
+    border: 3px solid var(--color-light-gray);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid var(--color-light-gray);
+    border-radius: 16px;
+    align-items: center;
 }
 
-.dashboard p {
-    grid-column: span 12;
+.dashboard-menu-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80px;
+    padding: 16px 0 16px 0;
+    margin-bottom: 16px;
+    /* border-bottom: 1px solid var(--color-light-gray); */
+}
+
+.dashboard-menu img {
+    width: 64px;
+    border-radius: 120px;
+}
+
+.profile-username {
+    grid-column: span 3;
+    padding-top: 16px;
+}
+
+.dashboard-menu nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 64px;
+}
+
+.dashboard-menu nav li {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 16px 32px;
+    border-bottom: 1px solid var(--color-light-gray);
+}
+
+.dashboard-menu nav li:nth-child(1) {
+    border-top: 1px solid var(--color-light-gray);
+}
+
+.dashboard-menu .title {
+    margin: 0;
+    padding-left: 16px;
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+.dashboard-menu .title:hover {
+    color: var(--color-primary);
+}
+
+/*************************************************************************
+  Profile
+**************************************************************************/
+.profile {
+    grid-column: 4 / span 9;
+    border: 3px solid var(--color-light-gray);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    width: 860px;
+}
+
+.profile h5 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.profile p {
+    width: 100%;
+    margin: 8px 0px;
+}
+
+.profile a {
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+.profile .helptext {
+    font-size: var(--font-size-small);
+    padding-top: 8px;
+    display: block;
+}
+
+.profile form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile form ul {
+    list-style: none;
+    line-height: 1.4;
+}
+
+.profile form ul li {
+    list-style: none;
+    line-height: 1.6;
+    font-size: var(--font-size-small);
+}
+
+.profile form .errorlist {
+    color: var(--color-warning);
+}
+
+.profile form p {
+    margin: 12px 0;
+    width: 100%;
+}
+
+.profile form p label {
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
+    color: var(--color-gray);
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.profile form p input {
+    width: 100%;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 4px;
+}
+
+.profile form p input:focus {
+    outline: none !important;
+    border: 1px solid var(--color-primary);
+}
+
+.profile form p input[type=submit] {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 64px;
+    padding: 16px;
+    font-size: var(--font-size-p);
+    font-weight: var(--font-weight-semi-bold);
+}
+
+
+.profile form p input[type=checkbox] {
+    display: inline;
+    justify-self: start;
+    text-align: left;
+    width: 16px;
+    margin-left: 16px;
+}
+
+.profile form p input[type=submit]:hover {
+    background-color: var(--color-dark);
+    cursor: pointer;
+}
+
+.profile .profile-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.profile .profile-footer a {
+    font-size: 14px;
+}
+
+.profile .profile-footer .forgot-password {
+    justify-self: end;
+    text-align: right;
 }

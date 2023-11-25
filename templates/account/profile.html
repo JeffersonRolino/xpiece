@@ -1,0 +1,25 @@
+{% extends "account/dashboard.html" %}
+{% load static %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block content %}
+    <div class="dashboard grid-container">
+
+        {% include "components/dashboard-menu.html" %}
+
+
+        {% block dashboard_content %}
+            <main class="profile">
+                <h5>Profile</h5>
+                <form method="post" enctype="multipart/form-data">
+                    {{ user_form.as_p }}
+                    {{ profile_form.as_p }}
+                    {% csrf_token %}
+                    <p><input type="submit" value="Save"></p>
+                </form>
+            </main>
+        {% endblock dashboard_content %}
+
+    </div>
+{% endblock content %}

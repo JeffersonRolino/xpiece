@@ -4,10 +4,14 @@
 {% block title %}Dashboard{% endblock title %}
 
 {% block content %}
-    <main class="dashboard">
-        <div class="grid-container">
-            <h1>Dashboard</h1>
-            <p>Welcome to your dashboard</p>
+    <div class="grid-container">
+
+        {% include "components/dashboard-menu.html" %}
+
+        <div class="dashboard-content">
+            {% block dashboard_content %}
+                
+            {% endblock dashboard_content %}
         </div>
-    </main>
+    </div>
 {% endblock content %}

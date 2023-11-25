@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from .forms import LoginForm, ProfileForm, UserForm, UserRegistrationForm
 from .models import Profile
@@ -9,7 +9,9 @@ from .models import Profile
 
 @login_required
 def dashboard(request):
-    return render(request, 'account/dashboard.html', {'section': 'dashboard'})
+    user = request.user
+    profile = get_object_or_404(Profile, user=user.id)
+    return render(request, 'account/dashboard.html', {'section': 'dashboard', 'user': user, 'profile': profile})
 
 
 def register(request):
@@ -38,4 +40,4 @@ def edit(request):
         user_form = UserForm(instance=request.user)
         profile_form = ProfileForm(instance=request.user.profile)
     
-    return render(request, 'account/edit-profile.html', {'user_form': user_form, 'profile_form': profile_form})
+    return render(request, 'account/profile.html', {'user_form': user_form, 'profile_form': profile_form})
