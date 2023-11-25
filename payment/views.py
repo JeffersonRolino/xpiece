@@ -54,6 +54,7 @@ def payment_process(request):
 @login_required
 def payment_completed(request, id, token):
     order = get_object_or_404(Order, id=id)
+    order.generate_url(request)
     url = request.build_absolute_uri(reverse('payment:completed', kwargs={'id':order.id, 'token':order.token}))
     send_email_after_payment(order, url)
     context = {'order': order}

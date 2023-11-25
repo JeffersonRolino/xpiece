@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Account - Orders{% endblock title %}
+
+{% block content %}
+    <div class="grid-container">
+
+        {% include "components/dashboard-menu.html" %}
+
+        <main class="orders-profile">
+            <h1>Orders</h1>
+            <ul class="orders-list-labels">
+                <li>ID</li>
+                <li>First Name</li>
+                <li>Last Name</li>
+                <li>Email</li>
+                <li>Paid</li>
+            </ul>
+
+            {% for order in orders %}
+                <ul class="orders-list">
+                    <li>
+                        {% if order.paid %}
+                            <a href="{{ order.url}}">{{ order.id }}</a>
+                        {% else %}
+                            <a href="{% url 'payment:canceled' order.id %}">{{ order.id }}</a>
+                        {% endif %}
+                    </li>
+                    <li>{{ order.first_name }}</li>
+                    <li>{{ order.last_name }}</li>
+                    <li>{{ order.email }}</li>
+                    <li>
+                        {% if order.paid %}
+                            <i class="fa-regular fa-circle-check"></i>
+                        {% else %}
+                            <i class="fa-regular fa-circle-xmark"></i>
+                        {% endif %}
+                    </li>
+
+                    
+
+                </ul>                    
+            {% endfor %}
+        </main>       
+
+    </div>
+{% endblock content %}

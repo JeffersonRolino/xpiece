@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 
+from orders.models import Order, OrderItem
+
 from .forms import LoginForm, ProfileForm, UserForm, UserRegistrationForm
 from .models import Profile
 
@@ -41,3 +43,13 @@ def edit(request):
         profile_form = ProfileForm(instance=request.user.profile)
     
     return render(request, 'account/profile.html', {'user_form': user_form, 'profile_form': profile_form})
+
+
+@login_required
+def orders(request):
+    user = request.user
+    orders = user.orders.filter(user=user.id).values()
+    print(orders)
+    profile = get_object_or_404(Profile, user=user.id)
+    context = {'user': user, 'profile': profile, 'orders': orders}
+    return render(request, 'account/orders.html', context)

@@ -4,6 +4,7 @@ import string
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import models
+from django.shortcuts import reverse
 
 from shop.models import Product
 
@@ -18,6 +19,7 @@ class Order(models.Model):
     paid = models.BooleanField(default=False)
     stripe_id = models.CharField(max_length=250, blank=True)
     token = models.SlugField(max_length=32, blank=True, null=True)
+    url = models.SlugField(max_length=100, blank=True, null=True)
 
 
     class Meta:
@@ -54,6 +56,13 @@ class Order(models.Model):
         token = ''.join(token)
 
         return token
+
+
+    def generate_url(self, request):
+        if not self.url:
+            self.url = request.build_absolute_uri(reverse('payment:completed', kwargs={'id':self.id, 'token':self.token}))
+        super(Order, self).save()
+
 
     def save(self, **kwargs):
         if not self.token:
