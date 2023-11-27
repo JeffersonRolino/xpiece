@@ -19,7 +19,7 @@ class Order(models.Model):
     paid = models.BooleanField(default=False)
     stripe_id = models.CharField(max_length=250, blank=True)
     token = models.SlugField(max_length=32, blank=True, null=True)
-    url = models.SlugField(max_length=100, blank=True, null=True)
+    url = models.CharField(max_length=255, blank=True, null=True)
 
 
     class Meta:

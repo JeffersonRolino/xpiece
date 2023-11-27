@@ -49,7 +49,6 @@ def edit(request):
 def orders(request):
     user = request.user
     orders = user.orders.filter(user=user.id).values()
-    print(orders)
     profile = get_object_or_404(Profile, user=user.id)
     context = {'user': user, 'profile': profile, 'orders': orders}
     return render(request, 'account/orders.html', context)

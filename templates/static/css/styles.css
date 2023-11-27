@@ -713,6 +713,12 @@ footer {
   Orders
 **************************************************************************/
 
+.order-content {
+    min-width: 1410px;
+    width: 100%;
+}
+
+
 .order-content h1 {
     grid-column: span 12;
     align-self: center;
@@ -725,6 +731,7 @@ footer {
     border: 3px solid var(--color-light-gray);
     border-radius: 16px;
     padding: 32px;
+    width: 100%;
 }
 
 .order-content .order-info h5 {
