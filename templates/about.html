@@ -3,6 +3,77 @@
 
 {% block content %}
     <main class="about-us grid-container">
-        <h1>About Us</h1>
+        <div class="text-box">
+            <h1>About Us</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit quas accusantium excepturi vitae illo eveniet repudiandae dolorum asperiores. Quas voluptatibus atque temporibus, quasi eveniet eius quod odit. Itaque error sequi id fugiat quis eum culpa, ab nulla inventore mollitia a alias numquam quas. Quasi, accusantium quam. Minus fuga doloribus vitae?</p>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit quas accusantium excepturi vitae illo eveniet repudiandae dolorum asperiores. Quas voluptatibus atque temporibus, quasi eveniet eius quod odit. Itaque error sequi id fugiat quis eum culpa, ab nulla inventore mollitia a alias numquam quas. Quasi, accusantium quam. Minus fuga doloribus vitae?</p>
+        </div>
+        <img src="{% static "images/about-us_hero.png" %}" alt="">
+
+        <div class="about-numbers">
+            <h2>42</h2>
+            <h6>Team Members</h6>
+        </div>
+
+        <div class="about-numbers">
+            <h2>63</h2>
+            <h6>UI Kits</h6>
+        </div>
+
+        <div class="about-numbers">
+            <h2>245</h2>
+            <h6>Illustrations</h6>
+        </div>
+
+        <div class="about-numbers">
+            <h2>24/7</h2>
+            <h6>Customer Service</h6>
+        </div>
+
+        <section class="our-team grid-container">
+            <h2>Our Team</h2>
+
+            <div class="team-member">
+                <img src="{% static "images/team_member_01.png" %}" alt="">
+                <h4>Steve Murray</h4>
+                <p>Designer & Founder</p>
+            </div>
+
+            <div class="team-member">
+                <img src="{% static "images/team_member_02.png" %}" alt="">
+                <h4>Sara Winkins</h4>
+                <p>Illustrator & Founder</p>
+            </div>
+
+            <div class="team-member">
+                <img src="{% static "images/team_member_03.png" %}" alt="">
+                <h4>Harry Smith</h4>
+                <p>Software Engineer</p>
+            </div>
+        </section>
+
+        <section class="benefits">
+
+            <div class="benefits-box">
+                <img src="{% static "images/diamond.png" %}" alt="">
+                <h6>Premium Design</h6>
+                <p>Our products are craft by the best designer and illustrators around.</p>
+            </div>
+
+            <div class="benefits-box">
+                <img src="{% static "images/shield.png" %}" alt="">
+                <h6>Money Back</h6>
+                <p>If you don’t like our products we return your money within 30 days.</p>
+            </div>
+
+            <div class="benefits-box">
+                <img src="{% static "images/24-7.png" %}" alt="">
+                <h6>24/7 Support</h6>
+                <p>Friendly 24/7 customer service. We are always ready to support you.</p>
+            </div>
+
+        </section>
+
     </main>
 {% endblock content %}
