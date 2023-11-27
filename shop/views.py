@@ -32,10 +32,10 @@ def product_detail(request, id, slug):
 
 
 def about(request):
-    context = {}
-    return render(request, 'about.html', context)
+    categories = Category.objects.all()
+    return render(request, 'about.html', {'categories': categories})
 
 
 def contact(request):
-    context = {}
-    return render(request, 'contact.html', context)
+    categories = Category.objects.all()
+    return render(request, 'contact.html', {'categories': categories})
