@@ -20,6 +20,7 @@ def product_list(request, category_slug=None):
 
 
 def product_detail(request, id, slug):
+    categories = Category.objects.all()
     product = get_object_or_404(Product, id=id, slug=slug)
     formats = Format.objects.filter(product__id=str(id))
     screenshots = Screenshot.objects.filter(product__id=str(id))
@@ -27,6 +28,7 @@ def product_detail(request, id, slug):
 
     return render(request, 'product/detail.html', {'product': product,
                                                    'formats': formats,
+                                                   'categories': categories,
                                                    'screenshots': screenshots,
                                                    'cart_add_product': cart_add_product})
 
