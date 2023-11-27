@@ -1093,6 +1093,19 @@ footer {
     margin-top: 4px;
 }
 
+.registration form p textarea {
+    width: 100%;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 4px;
+}
+
+.registration form p textarea:focus {
+    outline: none !important;
+    border: 1px solid var(--color-primary);
+}
+
 .registration form p input:focus {
     outline: none !important;
     border: 1px solid var(--color-primary);
@@ -1518,4 +1531,68 @@ footer {
 .benefits-box img {
     width: 64px;
     margin-bottom: 16px;
+}
+
+
+/*************************************************************************
+  Contact Us
+**************************************************************************/
+
+.contact-text {
+    grid-column: span 4;
+    min-width: 360px;
+    padding: 32px;
+    border: 3px solid var(--color-light-gray);
+    border-radius: 16px;
+}
+
+.contact-text h5 {
+    margin-bottom: 8px;
+    color: var(--color-dark);
+}
+
+.contact-text p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.visit-us {
+    margin-top: 32px;
+}
+
+.connect-us {
+    margin-top: 32px;
+}
+
+.contact-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 16px;
+}
+
+
+.contact-icons .icon-bg {
+    width: 64px;
+    height: 64px;
+    text-align: center;
+    padding-top: 12px;
+    background-color: var(--color-dark);
+    border-radius: 128px;
+}
+
+.contact-icons .icon-bg a {
+    color: var(--color-white);
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.contact-icons .icon-bg a:hover {
+    color: var(--color-primary);
+}
+
+
+.contact-form {
+    grid-column: span 8;
 }

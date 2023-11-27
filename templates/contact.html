@@ -3,6 +3,75 @@
 
 {% block content %}
     <main class="contact-us grid-container">
-        <h1>Contact Us</h1>
+        <div class="contact-text">
+            <div class="call-to-us">
+                <h5>Call to us</h5>
+                <p>We are available 24/7</p>
+                <p>55 44 3026 4355</p>
+                <p>0800 6543</p>
+            </div>
+
+            <div class="visit-us">
+                <h5>Visit us</h5>
+                <p>Av. Guedner, nº 1610 - Bloco 11</p>
+                <p>Jardim Aclimação</p>
+                <p>Maringá / PR</p>
+            </div>
+
+            <div class="connect-us">
+                <h5>Conect with us</h5>
+
+                <div class="contact-icons">
+                    <div class="icon-bg">
+                        <a href="#">
+                            <i class="fa-brands fa-dribbble"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="icon-bg">
+                        <a href="#">
+                            <i class="fa-brands fa-behance"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="icon-bg">
+                        <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+
+                    <div class="icon-bg">
+                        <a href="#">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form registration">
+            <h5>Contact Us</h5>
+            <form method="post">
+                <p>
+                    <label for="">your name</label>
+                    <input type="text">    
+                </p>
+
+                <p>
+                    <label for="">your email</label>
+                    <input type="text">    
+                </p>
+
+                <p>
+                    <label for="">your phone</label>
+                    <input type="text">    
+                </p>
+
+                <p>
+                    <label for="">your message</label>
+                    <textarea name="message" id="contact-us-message" cols="30" rows="10"></textarea>
+                </p>
+            </form>
+        </div>
     </main>
 {% endblock content %}
